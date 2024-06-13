@@ -6,15 +6,15 @@ pub contract CollegeInfoContract {
         pub let studentName: String
         pub let rollNo: UInt64
 
-        // Constructor for the City struct
-        init(cityName: String, pinCode: UInt64) {
-            self.studentName = cityName
-            self.rollNo = pinCode
+        // Constructor for the College struct
+        init(studentName: String, rollNo: UInt64) {
+            self.studentName = studentName
+            self.rollNo = rollNo
         }
     }
 
     // Declare a dictionary to hold College structs
-    pub var Colleges: {UInt64: College}
+    pub var colleges: {UInt64: College}
 
     // Initialize the contract
     init() {
@@ -23,7 +23,7 @@ pub contract CollegeInfoContract {
 
     // Function to add a College to the dictionary
     pub fun addCollege(studentName: String, rollNo: UInt64) {
-        let city = City(studentName: studentName, rollNo: rollNo)
+        let college = College(studentName: studentName, rollNo: rollNo)
         self.colleges[rollNo] = college
     }
 
